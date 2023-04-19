@@ -1,1 +1,1 @@
-"# label-recognition-docs-mobile" 
+# label-recognition-docs-mobile
