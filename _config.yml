@@ -1,64 +1,49 @@
-repositoryUrl: https://github.com/dynamsoft-docs/label-recognition-docs/blob/master
-repository: Dynamsoft/label-recognition-docs
-docFullPath: https://www.dynamsoft.com/label-recognition/docs
-firstLevelUrl: /label-recognition/docs
-docHomePage: /label-recognition/docs/introduction/
+repositoryUrl: https://github.com/dynamsoft-docs/label-recognition-docs-mobile/blob/master
+repository: Dynamsoft-Docs/label-recognition-docs-mobile
+docFullPath: https://www.dynamsoft.com/label-recognition/docs/mobile
+firstLevelUrl: /label-recognition/docs/mobile
+docHomePage: /label-recognition/docs/mobile/introduction/
 
-introduction: /label-recognition/docs/introduction/
-parameters: /label-recognition/docs/parameters/
-enumerations: /label-recognition/docs/parameters/enum/
-parameters-reference: /label-recognition/docs/parameters/reference/
+enumerations: /label-recognition/docs/core/parameters/enum/
+parameters-reference: /label-recognition/docs/core/parameters/reference/
 
-programming: /label-recognition/docs/programming/
+android: /label-recognition/docs/mobile/programming/android/
+android-api: /label-recognition/docs/mobile/programming/android/api-reference/
+android-release-notes: /label-recognition/docs/mobile/programming/android/release-notes/
 
-c-cplusplus: /label-recognition/docs/programming/c-cplusplus/
-c-cplusplus-api-reference: /label-recognition/docs/programming/c-cplusplus/api-reference/
+objectivec-swift: /label-recognition/docs/mobile/programming/objectivec-swift/
+objectivec-swift-api: /label-recognition/docs/mobile/programming/objectivec-swift/api-reference/
+objectivec-swift-release-notes: /label-recognition/docs/mobile/programming/objectivec-swift/release-notes/
 
-c-functions: /label-recognition/docs/programming/c-cplusplus/api-reference/c-functions/
-cpp-methods: /label-recognition/docs/programming/c-cplusplus/api-reference/c-label-recognition-class/
-c-cplusplus-structs: /label-recognition/docs/programming/c-cplusplus/api-reference/structs/
-
-c-cplusplus-release-notes: /label-recognition/docs/programming/c-cplusplus/release-notes/
-
-android: /label-recognition/docs/programming/android/
-android-api: /label-recognition/docs/programming/android/api-reference/
-android-release-notes: /label-recognition/docs/programming/android/release-notes/
-
-dotnet: /label-recognition/docs/programming/dotnet/
-dotnet_api: /label-recognition/docs/programming/dotnet/api-reference/
-dotnet_release_notes: /label-recognition/docs/programming/dotnet/release-notes/
-
-objectivec-swift: /label-recognition/docs/programming/objectivec-swift/
-objectivec-swift-api: /label-recognition/docs/programming/objectivec-swift/api-reference/
-objectivec-swift-release-notes: /label-recognition/docs/programming/objectivec-swift/release-notes/
-
-java: /label-recognition/docs/programming/java/
-java-api: /label-recognition/docs/programming/java/api-reference/
-java-release-notes: /label-recognition/docs/programming/java/release-notes/
-
-javascript: /label-recognition/docs/programming/javascript/
-javascript-api: /label-recognition/docs/programming/javascript/api-reference/
-javascript-release-notes: /label-recognition/docs/programming/javascript/release-notes/
-
-cplusplus-3: /label-recognition/docs/programming-3/cplusplus/
-cplusplus-3-api: /label-recognition/docs/programming-3/cplusplus/api-reference/
-
-assets: /label-recognition/docs/assets/
-edit_icon: /label-recognition/docs/assets/img-icon/edit-icon.png
-smile_icon: /label-recognition/docs/assets/img-icon/icon-smile.png
-sad_icon: /label-recognition/docs/assets/img-icon/icon-sad.png
-dbr_icon: /label-recognition/docs/assets/img-icon/icon-dbr.svg
-dwt_icon: /label-recognition/docs/assets/img-icon/icon-dwt.svg
-dnt_icon: /label-recognition/docs/assets/img-icon/icon-dnt.svg
-
-release-notes: /label-recognition/docs/release-notes/
-license-activation: /label-recognition/docs/license-activation/
+assets: /label-recognition/docs/mobile/assets/
+edit_icon: /label-recognition/docs/mobile/assets/img-icon/edit-icon.png
+smile_icon: /label-recognition/docs/mobile/assets/img-icon/icon-smile.png
+sad_icon: /label-recognition/docs/mobile/assets/img-icon/icon-sad.png
+dbr_icon: /label-recognition/docs/mobile/assets/img-icon/icon-dbr.svg
+dwt_icon: /label-recognition/docs/mobile/assets/img-icon/icon-dwt.svg
+dnt_icon: /label-recognition/docs/mobile/assets/img-icon/icon-dnt.svg
 
 useVersionTree: true
 
-baseurl: "/label-recognition/docs"
+baseurl: "/label-recognition/docs/mobile"
+
 plugins:
   - jemoji
+  - jekyll-sitemap
+
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default-layout"
+      noTitleIndex: true
+      needAutoGenerateSidebar: true
+      needGenerateH3Content: true
+  - scope:
+      path: "Hide_Tree_Page.html"
+    values:
+      sitemap: false
 
 url: "https://www.dynamsoft.com" # sitemap root
 
