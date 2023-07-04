@@ -1,0 +1,49 @@
+repositoryUrl: https://github.com/dynamsoft-docs/label-recognition-docs-mobile/blob/master
+repository: Dynamsoft-Docs/label-recognition-docs-mobile
+docFullPath: https://www.dynamsoft.com/label-recognition/docs/mobile
+firstLevelUrl: /label-recognition/docs/mobile
+docHomePage: /label-recognition/docs/mobile/introduction/
+
+enumerations: /label-recognition/docs/core/parameters/enum/
+parameters-reference: /label-recognition/docs/core/parameters/reference/
+
+android: /label-recognition/docs/mobile/programming/android/
+android-api: /label-recognition/docs/mobile/programming/android/api-reference/
+android-release-notes: /label-recognition/docs/mobile/programming/android/release-notes/
+
+objectivec-swift: /label-recognition/docs/mobile/programming/objectivec-swift/
+objectivec-swift-api: /label-recognition/docs/mobile/programming/objectivec-swift/api-reference/
+objectivec-swift-release-notes: /label-recognition/docs/mobile/programming/objectivec-swift/release-notes/
+
+assets: /label-recognition/docs/mobile/assets/
+edit_icon: /label-recognition/docs/mobile/assets/img-icon/edit-icon.png
+smile_icon: /label-recognition/docs/mobile/assets/img-icon/icon-smile.png
+sad_icon: /label-recognition/docs/mobile/assets/img-icon/icon-sad.png
+dbr_icon: /label-recognition/docs/mobile/assets/img-icon/icon-dbr.svg
+dwt_icon: /label-recognition/docs/mobile/assets/img-icon/icon-dwt.svg
+dnt_icon: /label-recognition/docs/mobile/assets/img-icon/icon-dnt.svg
+
+useVersionTree: true
+
+baseurl: "/label-recognition/docs/mobile"
+
+plugins:
+  - jemoji
+  - jekyll-sitemap
+
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default-layout"
+      noTitleIndex: true
+      needAutoGenerateSidebar: true
+      needGenerateH3Content: true
+  - scope:
+      path: "Hide_Tree_Page.html"
+    values:
+      sitemap: false
+
+url: "https://www.dynamsoft.com" # sitemap root
+
