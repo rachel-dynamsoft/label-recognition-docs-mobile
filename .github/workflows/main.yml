@@ -30,11 +30,11 @@ jobs:
       - name: Run a multi-line script
         run: |
           cd /home/ubuntu
-          [ -d DLRDocMobile] && rm -rf DLRDocMobile
+          [ -d DLRDocMobile ] && rm -rf DLRDocMobile
           [ -d label-recognition-docs-mobile ] &&   rm -rf label-recognition-docs-mobile
           [ -d Docs-Template-Repo-Preview ] && rm -rf Docs-Template-Repo-Preview
-          [ ! -d DLRDocMobile] && mkdir -p DLRDocMobile
-          git clone --depth 1 https://github.com/Dynamsoft-Docs/label-recognition-docs-mobile.git label-recognition-docs-mobile
+          [ ! -d DLRDocMobile ] && mkdir -p DLRDocMobile
+          git clone --depth 1 https://github.com/dynamsoft-docs/label-recognition-docs-mobile.git label-recognition-docs-mobile
           git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview
           cp -rfp ./label-recognition-docs-mobile/* ./DLRDocMobile/
           cp -rfp ./Docs-Template-Repo-Preview/* ./DLRDocMobile/
