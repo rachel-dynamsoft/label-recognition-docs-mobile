@@ -32,12 +32,12 @@ jobs:
           cd /home/ubuntu
           [ -d DLRDocMobile] && rm -rf DLRDocMobile
           [ -d label-recognition-docs-mobile ] &&   rm -rf label-recognition-docs-mobile
-          [ -d Docs-Template-Repo ] && rm -rf Docs-Template-Repo
+          [ -d Docs-Template-Repo-Preview ] && rm -rf Docs-Template-Repo-Preview
           [ ! -d DLRDocMobile] && mkdir -p DLRDocMobile
           git clone --depth 1 https://github.com/Dynamsoft-Docs/label-recognition-docs-mobile.git label-recognition-docs-mobile
-          git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo
+          git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview
           cp -rfp ./label-recognition-docs-mobile/* ./DLRDocMobile/
-          cp -rfp ./Docs-Template-Repo/* ./DLRDocMobile/
+          cp -rfp ./Docs-Template-Repo-Preview/* ./DLRDocMobile/
           cd DLRDocMobile&& bundle exec jekyll build --incremental
 
       - name: Sync files - Main Site
@@ -63,7 +63,7 @@ jobs:
           cd /home/ubuntu 
           [ -d DLRDocMobilePreview ] && rm -rf DLRDocMobilePreview
           [ -d label-recognition-docs-mobile-preview ] && rm -rf label-recognition-docs-mobile-preview
-          [ -d Docs-Template-Repo-Preview-DCV2 ] && rm -rf Docs-Template-Repo-Preview-DCV2
+          [ -d Docs-Template-Repo-Preview ] && rm -rf Docs-Template-Repo-Preview
           cd /home/ubuntu
 
       - name: Build the site
@@ -71,9 +71,9 @@ jobs:
           cd /home/ubuntu
           [ ! -d DLRDocMobilePreview ] && mkdir -p DLRDocMobilePreview
           git clone --depth 1 --branch preview https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/label-recognition-docs-mobile.git label-recognition-docs-mobile-preview
-          git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview-DCV2          
+          git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview          
           cp -rfp ./label-recognition-docs-mobile-preview/* ./DLRDocMobilePreview/
-          cp -rfp ./Docs-Template-Repo-Preview-DCV2/* ./DLRDocMobilePreview/
+          cp -rfp ./Docs-Template-Repo-Preview/* ./DLRDocMobilePreview/
           sed -i -e "1,3s/blob\/master$/blob\/preview/" \
           -e "1,3s/blob\/main$/blob\/preview/" /home/ubuntu/DLRDocMobilePreview/_config.yml
           cd DLRDocMobilePreview && bundle exec jekyll build --incremental
