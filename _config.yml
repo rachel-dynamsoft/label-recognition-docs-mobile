@@ -41,6 +41,16 @@ defaults:
       needAutoGenerateSidebar: true
       needGenerateH3Content: true
   - scope:
+      path: "programming-old/android"
+    values:
+      docRootName: "Label Recognizer Android Edition"
+      docHomePage: "/label-recognition/docs/mobile/programming/android/"
+  - scope:
+      path: "programming-old/objectivec-swift"
+    values:
+      docRootName: "Label Recognizer iOS Edition"
+      docHomePage: "/label-recognition/docs/mobile/programming/objectivec-swift/"
+  - scope:
       path: "programming/android"
     values:
       docRootName: "Label Recognizer Android Edition"
