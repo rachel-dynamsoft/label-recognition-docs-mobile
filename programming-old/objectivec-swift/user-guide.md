@@ -31,7 +31,7 @@ permalink: /programming/objectivec-swift/user-guide.html
 
 ## Add the SDK
 
-The Dynamsoft Label Recognizer (DLR) Android SDK comes with three modules:
+The Dynamsoft Label Recognizer (DLR) iOS SDK comes with three modules:
 
 * **DynamsoftLabelRecognizer.framework**: Main module. Provides APIs to recognize text from image files and camera video.
 * **DynamsoftCore.framework**: The core library of Dynamsoft's capture vision SDKs, including common basic structure and license related APIs.
@@ -48,7 +48,7 @@ There are several ways to add the SDK into your project.
    * **DynamsoftCameraEnhancer.framework**
 
    > Note:
-   > If you want to use Android Camera SDK or your own sdk to control camera, please ignore **DynamsoftCameraEnhancer.framework** in the following steps.
+   > If you want to use iOS Camera SDK or your own sdk to control camera, please ignore **DynamsoftCameraEnhancer.framework** in the following steps.
 
 2. Drag and drop the above **frameworks** into your Xcode project. Make sure to check Copy items if needed and Create groups to copy the framework into your project's folder.
 3. Click on the project settings then go to **General –> Frameworks, Libraries, and Embedded Content**. Set the **Embed** field to **Embed & Sign** for **DynamsoftLabelRecognizer** and **DynamsoftCameraEnhancer**.
