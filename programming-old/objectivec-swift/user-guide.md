@@ -34,14 +34,14 @@ permalink: /programming/objectivec-swift/user-guide.html
 The Dynamsoft Label Recognizer (DLR) iOS SDK comes with three modules:
 
 * **DynamsoftLabelRecognizer.framework**: Main module. Provides APIs to recognize text from image files and camera video.
-* **DynamsoftCore.framework**: The core library of Dynamsoft's capture vision SDKs, including common basic structure and license related APIs.
+* **DynamsoftCore.framework**: The core library of Dynamsoft's SDKs, including common basic structure and license related APIs.
 * **DynamsoftCameraEnhancer.framework** (Optional): Dynamsoft Camera Enhancer (DCE) module for getting video frames from mobile cameras. Provides APIs for camera control, camera preview, and other advanced features.
 
 There are several ways to add the SDK into your project.
 
 ### Add the Library Manually
 
-1. Download the SDK package from the <a href="https://www.dynamsoft.com/survey/dlr/?utm_source=docs" target="_blank">Dynamsoft website</a>. After unzipping, three **framework** files can be found in the **DynamsoftLabelRecognizer\Libs** directory:
+1. Download the SDK package from the <a href="https://www.dynamsoft.com/survey/dlr/?utm_source=docs" target="_blank">Dynamsoft website</a>. After unzipping, three **framework** files can be found in the **DynamsoftLabelRecognizer\Frameworks** directory:
 
    * **DynamsoftLabelRecognizer.framework**
    * **DynamsoftCore.framework**
@@ -77,7 +77,7 @@ There are several ways to add the SDK into your project.
 
 ## Build Your First Application
 
-The following sample will demonstrate how to take a picture and recognize it.
+The following sample will demonstrate how to create a HelloWorld app for recognizing text from camera video input.
 
 >Note:
 >
@@ -271,8 +271,6 @@ Add the SDK to your new project. Please read [Add the SDK](#add-the-sdk) section
    }
    ```
 
-    >The variable `data` represents the temporary photo taken by camera app, which will be explained later.
-
 ### Obtain And Display Recognized Results
 
 1. You can obtain the label recognition results via `labelResultCallback`. Add code to display the label recognition results on the view.
@@ -337,7 +335,7 @@ Add the SDK to your new project. Please read [Add the SDK](#add-the-sdk) section
 
    The recognition results of SDK are organized into a four-tier structure:
 
-   * `iDLRResult[]` corresponds to the results of an `image`.
+   * The array of `iDLRResult` corresponds to the results of an `image`.
    * `iDLRResult` corresponds to the result of a `TextArea` (also called Label).
    * `iDLRLineResult` corresponds to the result of each `TextLine` in the Label.
    * `iDLRCharacterResult` corresponds to the result of each `Character` in the `TextLine`.
