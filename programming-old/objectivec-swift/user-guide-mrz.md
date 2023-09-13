@@ -8,7 +8,7 @@ needGenerateH3Content: true
 permalink: /programming/objectivec-swift/user-guide-mrz.html
 ---
 
-# MRZ Scanner Solution for iOS - User Guide
+# Dynamsoft MRZ Scanner for iOS Package - User Guide
 
 - [MRZ Scanner Solution for iOS - User Guide](#mrz-scanner-solution-for-ios---user-guide)
   - [Requirements](#requirements)
@@ -20,47 +20,54 @@ permalink: /programming/objectivec-swift/user-guide-mrz.html
     - [Include the Frameworks](#include-the-frameworks)
     - [Initialize the License](#initialize-the-license)
     - [Initialize the Camera Module](#initialize-the-camera-module)
-    - [Initialize the MRZ Recognizer](#initialize-the-mrz-recognizer)
-    - [Start Recognition Process](#start-recognition-process)
-    - [Obtain And Display Recognized MRZ Result](#obtain-and-display-recognized-mrz-result)
+    - [Initialize the MRZ Scanner](#initialize-the-mrz-recognizer)
+    - [Start MRZ Scanning](#start-recognition-process)
+    - [Obtain and Display Recognized MRZ Result](#obtain-and-display-recognized-mrz-result)
     - [Build and Run the Project](#build-and-run-the-project)
 
 ## Requirements
 
-- Supported OS: iOS 11.0 or higher.
-- Supported ABI: arm64 and x86_64.
-- Development Environment: Xcode 13.0 and above (Xcode 14.1+ recommended), CocoaPods 1.11.0+
+- **Supported OS**: iOS 11.0 or higher.
+- **Supported ABI**: arm64 and x86_64.
+- **Development Environment**: Xcode 13.0 and above (Xcode 14.1+ recommended), CocoaPods 1.11.0+
 
 ## Add the Frameworks
 
-The MRZ SCanner Solution iOS Package comes with four frameworks:
+The MRZ Scanner for iOS Package comes with four frameworks:
 
-- **DynamsoftLabelRecognizer.xcframework**: <a href="https://www.dynamsoft.com/label-recognition/docs/core/introduction/" target="_blank"> Dynamsoft Label Recognizer (DLR) </a> is a framework that offers APIs for text recognition from image files and camera video. **A license is required for its use.**
 - **DynamsoftCore.xcframework**: The core framework includes common basic structure and license related APIs.
-- **DynamsoftCameraEnhancer.xcframework** (Optional): <a href="https://www.dynamsoft.com/camera-enhancer/docs/core/introduction/" target="_blank"> Dynamsoft Camera Enhancer (DCE) </a> is a framework of getting video frames from mobile cameras. Provides APIs for camera control, camera preview, and other advanced features. **A license is required for its advanced features such as `frame filter`, `sensor control`, `autozoom`, `enhanced focus` and `smart torch`**.
-- **MRZScanner.xcframework**: <a href="todo" target="_blank">MRZScanner</a> is a framework wrapped around the Dynamsoft Label Recognizer SDK. It is not a part of the Dynamsoft standard SDK but is completely open source. You can download it and freely modify it.
+- **DynamsoftLabelRecognizer.xcframework**: <a href="https://www.dynamsoft.com/label-recognition/docs/core/introduction/" target="_blank"> Dynamsoft Label Recognizer (DLR) </a> is a framework that offers APIs for text recognition from image files and camera video. **A license is required for its use.**
+- **MRZScanner.xcframework**: <a href="todo" target="_blank">MRZScanner</a> is a framework wrapped around the Dynamsoft Label Recognizer SDK for MRZ scanning. 
+- **DynamsoftCameraEnhancer.xcframework** (Optional): <a href="https://www.dynamsoft.com/camera-enhancer/docs/core/introduction/" target="_blank"> Dynamsoft Camera Enhancer (DCE) </a> is a framework for getting video frames from mobile cameras. DCE provides APIs for camera control, camera preview, and more. A license is required for its advanced features such as **frame filter**, **sensor control**, **auto zoom**, **enhanced focus** and **smart torch**. 
 
-There are several ways to add the SDK into your project.
+  > Note: If you want to use iOS Camera SDK or your own sdk to control camera, please ignore **DynamsoftCameraEnhancer.xcframeork** in the following steps.
+
+You can add the MRZ scanner frameworks to your project manually or via CocoaPods.
 
 ### Add the Frameworks Manually
 
-1. Download the solution package from the <a href="todo" target="_blank">Dynamsoft website</a>. After unzipping, four **xcframework** files can be found in the **MRZScanner\Frameworks** directory:
+To add the MRZ scanner frameworks manually, please follow these steps:
+
+1. Download the solution package from the <a href="todo" target="_blank">Dynamsoft website</a>. After unzipping, four `xcframework` files can be found in the `MRZScanner\Frameworks` directory:
 
    - **MRZScanner.xcframework**
    - **DynamsoftLabelRecognizer.xcframework**
    - **DynamsoftCore.xcframework**
    - **DynamsoftCameraEnhancer.xcframework**
 
-   > Note:
-   > If you want to use iOS Camera SDK or your own sdk to control camera, please ignore **DynamsoftCameraEnhancer.xcframeork** in the following steps.
+2. Drag and drop the desired XCFrameworks into your project. Make sure to select **Copy items if needed** and **Create groups** to copy the framework into your project's folder.
 
-2. Drag and drop the target frameworks from the above four **xcframework** into your Xcode project. Make sure to check Copy items if needed and Create groups to copy the framework into your project's folder.
+3. In Xcode, navigate to your project settings and select **General** from the top menu.
 
-3. Click on the project settings then go to **General –> Frameworks, Libraries, and Embedded Content**. Set the **Embed** field to **Embed & Sign** for all of them.
+4. Scroll down to the **Frameworks, Libraries, and Embedded Content** section and ensure that the XCFrameworks you added in step 2 are listed.
+
+5. For each XCFramework, set the **Embed** field to **Embed & Sign**. This will ensure that the frameworks are embedded in your app and properly signed.
 
 ### Add the Frameworks via CocoaPods
 
-1. Add the frameworks in your **Podfile**, replace `TargetName` with your real target name.
+To add the MRZ scanner frameworks via CocoaPods, please follow these steps:
+
+1. Add the frameworks in your `Podfile`, replace `TargetName` with your real target name.
 
    ```pod
    target 'TargetName' do
@@ -74,7 +81,7 @@ There are several ways to add the SDK into your project.
    end
    ```
 
-2. Execute the pod command to install the frameworks and generate workspace(**HelloWorld.xcworkspace**):
+2. Execute the pod command to install the frameworks and generate `HelloWorld.xcworkspace`:
 
    ```bash
    pod install
@@ -82,26 +89,29 @@ There are several ways to add the SDK into your project.
 
 ## Build Your First Application
 
-The following sample will demonstrate how to create a `HelloWorld` app for recognizing MRZ from camera video input. After you complete all steps, the final application looks like this example.
+The following sample will demonstrate how to create a HelloWorld app for recognizing MRZ from camera video input. After you complete all the steps, the final application will look like the example provided.
 
-[Download the Objective-C sample source code](todo)
-[Download the Swift sample source code](todo)
+Download the source code for either Objective-C or Swift:
+
+- [Download MRZ Scan sample code [Objective-C]](todo)
+- [Download MRZ Scan sample code [Swift]](todo)
 
 >Note:
->
->- The following steps are completed in XCode 13.0
+>- These steps were completed in XCode 13.0
 
 ### Create a New Project
 
-1. Open XCode and select New Project… in the File > New > New Project… menu to create a new project.
+To create a new project in Xcode, follow these steps:
 
-2. Select **iOS -> App** for your application.
+1. Open Xcode and navigate to **File > New > New Project…**
 
-3. Input your product name (Helloworld), interface (StoryBoard) and language (Objective-C/Swift)
+2. Select **App** under the **iOS** category.
 
-4. Click on the **Next** button and select the location to save the project.
+3. Choose a product name (e.g. Helloworld), interface (Storyboard), and language (Objective-C or Swift).
 
-5. Click on the **Create** button to finish.
+4. Click **Next** and select a location to save your project.
+
+5. Click **Create** to finish.
 
 ### Include the Frameworks
 
@@ -143,7 +153,7 @@ Add the SDK to your new project. Please read [Add the Frameworks](#add-the-frame
    >  
    >- Network connection is required for the license to work.
    >- The license string here will grant you a time-limited trial license.
-   >- If the license has expired, you can go to the <a href="https://www.dynamsoft.com/customer/license/trialLicense?utm_source=docs" target="_blank">customer portal</a> to request for an extension.
+   >- If the license has expired, you can log into the <a href="https://www.dynamsoft.com/customer/license/trialLicense?utm_source=docs" target="_blank">Dynamsoft customer portal</a> to request for an extension.
 
 ### Initialize the Camera Module
 
@@ -294,7 +304,7 @@ Add the SDK to your new project. Please read [Add the Frameworks](#add-the-frame
    }
    ```
 
-### Obtain And Display Recognized MRZ Result
+### Obtain and Display Recognized MRZ Result
 
 1. Obtain the MRZ result via `mrzResultCallback` and display the it on the `UIAlertController`.
 
